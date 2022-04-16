@@ -21,7 +21,7 @@ productRouter.get("/", (req, res) => {
 
 //New
 productRouter.get("/new", (req, res) => {
-  res.send("I AM NEW");
+  res.render("new.ejs");
 });
 
 //Delete
@@ -36,7 +36,10 @@ productRouter.put("/:id", (req, res) => {
 
 //create
 productRouter.post("/", (req, res) => {
-  res.send("I AM CREATE");
+  Product.create(req.body, (err, newProduct) => {
+    if (err) return res.send(err);
+    res.redirect("/products");
+  });
 });
 
 //Edit
