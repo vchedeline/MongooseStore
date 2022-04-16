@@ -31,7 +31,10 @@ productRouter.delete("/:id", (req, res) => {
 
 //Update
 productRouter.put("/:id", (req, res) => {
-  res.send("I AM UPDATE");
+  Product.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
+    if (err) return res.send(err)
+    res.redirect("/products")
+  })
 });
 
 //create
@@ -44,7 +47,9 @@ productRouter.post("/", (req, res) => {
 
 //Edit
 productRouter.get("/:id/edit", (req, res) => {
-  res.send("I AM EDIT");
+  Product.findById(req.params.id, (err, product) => {
+    res.render("edit.ejs", { product });
+  });
 });
 
 //Show

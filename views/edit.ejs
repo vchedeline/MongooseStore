@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Product</title>
+</head>
+<body>
+  <h1> Edit <%=product.name %> </h1>
+ <form action="/products/<%=product._id%>?_method=PUT " method="POST">
+   Name: <input type="text" name="name" value="<%=product.name %>">
+   Description: <input type="text" name="description" value="<%=product.description%>">
+   Price: <input type="text" name="price" value="<%=product.price%>">
+   Inventory On Hand: <input type="text" name="qty" value="<%=product.qty%>">
+   Image: <input type="text" name="img" value="<%=product.img%>">
+   <input type="submit" value="ADD PRODUCT">
+ </form>
+</body>
+</html>
