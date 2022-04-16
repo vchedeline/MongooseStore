@@ -21,6 +21,7 @@ db.on("disconnected", () => console.log("MongoDB Disconnected"));
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 app.use("/products", productsController);
 
 app.listen(PORT, () => {

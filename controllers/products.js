@@ -46,7 +46,9 @@ productRouter.get("/:id/edit", (req, res) => {
 
 //Show
 productRouter.get("/:id", (req, res) => {
-  res.send("I AM SHOW");
+  Product.findById(req.params.id, (err, product) => {
+    res.render("show.ejs", { product });
+  });
 });
 
 module.exports = productRouter;
