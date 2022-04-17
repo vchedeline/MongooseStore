@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Whisper&display=swap');
 
 body {
+
   background-color: rgb(149,28,156);
+  background-image: url("https://thumbs.gfycat.com/FrigidGargantuanHarlequinbug-size_restricted.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .pages{
@@ -46,5 +54,24 @@ header div p {
 }
 
 #shopNow {
+  text-shadow: gold;
+}
 
+/* Index Route */
+main {
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  height: 80vh;
+}
+.product-list{
+  display: flex;
+  margin-top: 5%;
+}
+
+.product {
+  margin: 2%;
+  color: white;
 }
