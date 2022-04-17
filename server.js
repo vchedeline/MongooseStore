@@ -22,7 +22,13 @@ db.on("disconnected", () => console.log("MongoDB Disconnected"));
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use("/public", express.static("public"));
+app.use(morgan("tiny"));
 app.use("/products", productsController);
+
+app.get("/", (req, res) => {
+  res.render("main.ejs");
+});
 
 app.listen(PORT, () => {
   console.log(`Now listening on Port ${PORT}`);
