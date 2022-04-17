@@ -3,9 +3,8 @@
   <%- include ("partials/head.ejs") %> 
 <body>
   <header class="pages">
-    <%- include("partials/header.ejs") %> 
+    <%- include("partials/header.ejs", {title: `${product.name}`}) %> 
     </header>
-  <h1><%= product.name%> </h1>
   <h3><a href="/products">Go Back To All Products</a></h3>
   <div>
     <img src="<%=product.img%>" alt=""> </br>

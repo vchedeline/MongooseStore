@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Whisper&display=swap');
+* {
+  box-sizing: border-box;
+}
 
 body {
 
@@ -32,10 +35,14 @@ body {
   border-bottom: black solid 10px;
 }
 
+#main div p {
+  font-size: 2em;
+  font-family: 'Shadows Into Light', cursive;
+}
+
 header div {
   width: 100%;
 	height: 100%;
-  padding-top: 3%;
 	color: #FFF;
 	text-shadow: 2px 2px 1px #333;
   background-image: linear-gradient( 45deg, #4a0276f0 30%, #fd08c4db);
@@ -43,18 +50,43 @@ header div {
 
 header div #title {
   font-family: 'Whisper', cursive;
-  font-size: 3em;
+  font-size: 4em;
   text-decoration: none; 
   color: white;
 }
 
+header div #title:hover {
+  transform: scale(1);
+  animation: pulse 1s infinite;
+}
+
 header div p {
-  font-size: 2em;
+  font-size: 3em;
   font-family: 'Shadows Into Light', cursive;
 }
 
-#shopNow {
-  text-shadow: gold;
+#shopNow:hover {
+  transform: scale(1);
+  animation: pulse 1s infinite;
+}
+
+#shopNow a {
+  text-decoration: none;
+  color: white;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+	}
+	
+	70% {
+		transform: scale(1);
+	}
+	
+	100% {
+		transform: scale(0.95);
+	}
 }
 
 /* Index Route */
@@ -68,6 +100,7 @@ main {
 }
 .product-list{
   display: flex;
+  flex-wrap: wrap;
   margin-top: 5%;
 }
 
