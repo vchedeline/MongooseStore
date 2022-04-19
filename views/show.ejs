@@ -5,19 +5,28 @@
   <header class="pages">
     <%- include("partials/header.ejs", {title: `${product.name}`}) %> 
     </header>
-  <h3><a href="/products">Go Back To All Products</a></h3>
-  <div>
+  <div class="show-card d-flex flex-column justify-content-center align-items-center">
     <img src="<%=product.img%>" alt=""> </br>
-    <a href="/products/<%=product._id%>/edit ">EDIT ME</a>
-    <form action="/products/<%=product._id%>?_method=DELETE" method="post">
-      <input type="submit" value="DELETE ME">
-    </form>
+    <div>
+      <a href="/products/<%=product._id%>/edit ">
+        <input id="btn-edit" type="button" value="EDIT ME">
+      </a>
+      <form action="/products/<%=product._id%>?_method=DELETE" method="post">
+        <input id="btn-del" type="submit" value="DELETE ME">
+      </form>
+    </div>
     <% if(product.qty === 0) { %>
       <p>Out Of Stock</p>
     <% } else { %> 
     <p># of Items Left: <%= product.qty %> </p>
-    <button>BUY NOW</button>   
+    <button id="btn-buy">BUY NOW</button>   
     <% } %> 
   </div>
+  <div class="back-btn">
+    <a href="/products">
+      <input id="btn-back" type="button" value="Go Back To All Products">
+    </a>
+  </div>
+  
 </body>
 </html>

@@ -66,4 +66,12 @@ productRouter.get("/:id", (req, res) => {
   });
 });
 
+//Clicked
+productRouter.put("/clicked", (req, res) => {
+  Product.findByIdAndUpdate(req.params.id, req.body.qty, (err, updatedProductAmount) => {
+    if (err) return res.send(err);
+    res.redirect(`/products/${req.params.id}`);
+  });
+})
+
 module.exports = productRouter;

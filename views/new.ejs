@@ -4,14 +4,17 @@
 <body>
   <header class="pages">
     <%- include("partials/header.ejs", {title: "New Product"}) %> 
-    </header>
- <form action="/products" method="POST">
-   Name: <input type="text" name="name">
-   Description: <input type="text" name="description">
-   Price: <input type="text" name="price">
-   Inventory On Hand: <input type="text" name="qty">
-   Image: <input type="text" name="img">
-   <input type="submit" value="ADD PRODUCT">
- </form>
+  </header>
+  <div class="new-form">
+    <form action="/products" method="POST">
+      <p>Name <input type="text" name="name"></p>
+      <p>Description <input type="text" name="description"></p>
+      <p>Price <input type="text" name="price"></p>
+      <p>Inventory On Hand <input type="text" name="qty"></p>
+      <p>Image <input type="text" name="img"></p>
+      <p id="btn-add"><input type="submit" value="ADD PRODUCT"></p>
+    </form>
+  </div>
+
 </body>
 </html>

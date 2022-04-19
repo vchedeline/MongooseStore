@@ -5,13 +5,15 @@
   <header class="pages">
     <%- include("partials/header.ejs", {title: `Edit ${product.name}`}) %> 
     </header>
- <form action="/products/<%=product._id%>?_method=PUT " method="POST">
-   Name: <input type="text" name="name" value="<%=product.name %>">
-   Description: <input type="text" name="description" value="<%=product.description%>">
-   Price: <input type="text" name="price" value="<%=product.price%>">
-   Inventory On Hand: <input type="text" name="qty" value="<%=product.qty%>">
-   Image: <input type="text" name="img" value="<%=product.img%>">
-   <input type="submit" value="UPDATE ME">
- </form>
+    <div class="new-form">
+      <form action="/products/<%=product._id%>?_method=PUT " method="POST">
+        <p>Name <input type="text" name="name" value="<%=product.name %>"></p>
+        <p>Description <input type="text" name="description" value="<%=product.description%>"></p>
+        <p>Price <input type="text" name="price" value="<%=product.price%>"></p>
+        <p>Inventory On Hand <input type="text" name="qty" value="<%=product.qty%>"></p>
+        <p>Image <input type="text" name="img" value="<%=product.img%>"></p>
+        <p id="btn-add"><input type="submit" value="UPDATE ME"></p>
+      </form>
+    </div>
 </body>
 </html>

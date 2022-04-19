@@ -6,17 +6,25 @@
     <%- include("partials/header.ejs", {title: "All Products"}) %> 
   </header>
   <main>
-    <h3><a href="/products/new">Add New Product</a></h3>
-    <div class="product-list">
-      <% products.forEach(product => { %>
-        <div class="product">
-          <a href="/products/<%=product._id%> "><img src="<%=product.img%>" alt="<%=product.name %> "></a> </br>
-          Name: <%= product.name %> </br>
-          Description: <%= product.description %> </br>
-          Price: <%= product.price %> </br>
-          Quantity: <%= product.qty %>    
-        </div>
-      <% }) %> 
+    <div class="btn-div">
+      <a href="/products/new">Add New Product</a>
+    </div>
+    <div class="container">
+      <div class="row row-cols-3 gx-4 gy-5">
+        <% products.forEach(product => { %>
+          <div class="col product">
+            <div class="item-card">
+              <a href="/products/<%=product._id%> "><img src="<%=product.img%>" alt="<%=product.name %> "></a> </br>
+              <div>
+              <p><%= product.name %>: $<%= product.price %></p>
+              <p class="text-center"><%= product.description %></p>
+              <p>In Stock: <%= product.qty %> </p>
+              </div>
+            </div>
+   
+          </div>
+        <% }) %> 
+      </div>
     </div>
   </main>
 

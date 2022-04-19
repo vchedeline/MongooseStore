@@ -1,57 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Whisper&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Whisper&display=swap");
 * {
   box-sizing: border-box;
 }
 
 body {
-
-  background-color: rgb(149,28,156);
+  background-color: rgb(149, 28, 156);
   background-image: url("https://thumbs.gfycat.com/FrigidGargantuanHarlequinbug-size_restricted.gif");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  height: 100vh;
 }
 
-.pages{
+.pages {
   text-align: center;
-	width: 100%;
-	height: 20vh;
-	position: relative;
-	overflow: hidden;
-	border-radius: 0 0 85% 85% / 40%;
+  width: 100%;
+  height: 25vh;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 40%;
   border-bottom: black solid 10px;
 }
 
 #main {
   text-align: center;
-	width: 100%;
-	height: 50vh;
-	position: relative;
-	overflow: hidden;
-	border-radius: 0 0 85% 85% / 40%;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 40%;
   border-bottom: black solid 10px;
 }
 
 #main div p {
   font-size: 2em;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: "Shadows Into Light", cursive;
 }
 
 header div {
   width: 100%;
-	height: 100%;
-	color: #FFF;
-	text-shadow: 2px 2px 1px #333;
-  background-image: linear-gradient( 45deg, #4a0276f0 30%, #fd08c4db);
+  height: 100%;
+  color: #fff;
+  text-shadow: 2px 2px 1px #333;
+  background-image: linear-gradient(45deg, #4a0276f0 30%, #fd08c4db);
 }
 
 header div #title {
-  font-family: 'Whisper', cursive;
+  font-family: "Whisper", cursive;
   font-size: 4em;
-  text-decoration: none; 
+  text-decoration: none;
   color: white;
 }
 
@@ -61,8 +59,8 @@ header div #title:hover {
 }
 
 header div p {
-  font-size: 3em;
-  font-family: 'Shadows Into Light', cursive;
+  font-size: 3.5em;
+  font-family: "Shadows Into Light", cursive;
 }
 
 #shopNow:hover {
@@ -76,35 +74,190 @@ header div p {
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-	}
-	
-	70% {
-		transform: scale(1);
-	}
-	
-	100% {
-		transform: scale(0.95);
-	}
+  0% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
 }
 
 /* Index Route */
 main {
-  background-color: rgba(0, 0, 0, .5);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80vw;
-  height: 80vh;
+  height: 90vh;
 }
-.product-list{
+
+.btn-div {
+  width: 100%;
+  height: 10%;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-div a {
+  text-decoration: none;
+  color: white;
+  background-image: linear-gradient(45deg, #4a0276f0 30%, #fd08c4db);
+  border-radius: 50px;
+  border: black solid 3px;
+  padding: 1%;
+}
+
+.item-card {
+  border: black solid 5px;
+  background-image: linear-gradient(45deg, #4a0276f0 30%, #fd08c4db);
+  box-shadow: 8px 8px 10px black;
+  height: 100%;
+  width: 100%;
 }
 
 .product {
-  margin: 2%;
   color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.product a {
+  display: flex;
+  justify-content: center;
+}
+
+.product img {
+  border: black solid 2px;
+  margin-top: 5%;
+}
+
+.product div {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product div p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* New Route */
+.new-form {
+  background-image: linear-gradient(45deg, #4a0276f0 30%, #fd08c4db);
+  width: 30vw;
+  height: 60vh;
+  color: white;
+  margin-top: 4%;
+  border: black solid 5px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.new-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 4%;
+}
+
+.new-form form p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.5%;
+  font-size: x-large;
+  font-family: "Shadows Into Light", cursive;
+}
+
+#btn-add input {
+  margin-top: 2%;
+  border-radius: 50px;
+  background-color: black;
+  padding: 1%;
+  color: white;
+}
+
+/* Show Rotue */
+
+.show-card {
+  border: black solid 5px;
+  background-image: linear-gradient(45deg, #4a0276f0 30%, #fd08c4db);
+  box-shadow: 8px 8px 10px black;
+  height: 55vh;
+  width: 20vw;
+  color: white;
+  margin-top: 2%;
+}
+
+.show-card img {
+  border: black solid 3px;
+  margin-top: 5%;
+}
+
+.show-card div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10%;
+}
+
+.show-card p {
+  font-size: x-large;
+}
+#btn-del, #btn-buy, #btn-edit {
+
+  border-radius: 50px;
+  background-color: black;
+  width: 6vw;
+  height: 50px;
+  padding: 3%;
+  color: white;
+}
+
+.back-btn {
+  margin-top: 2%;
+}
+
+#btn-back {
+  text-decoration: none;
+  color: white;
+  background-image: linear-gradient(45deg, #4a0276f0 30%, #fd08c4db);
+  border-radius: 50px;
+  border: black solid 3px;
+  padding: 3%;
+  font-size: x-large;
+}
+
+@media (min-width: 701px) and (max-width: 1300px) {
+  header div #title {
+    font-size: 2.8em;
+  }
+
+  #main div p {
+    font-size: 2.3em;
+  }
+}
+@media (max-width: 700px) {
+  #main {
+    height: 40vh;
+  }
+  
+  header div #title {
+    font-size: 2.3em;
+  }
+
+  #main div p {
+    font-size: 1.75em;
+  }
 }
