@@ -212,9 +212,17 @@ main {
   margin-bottom: 10%;
 }
 
+.show-card form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .show-card p {
   font-size: x-large;
 }
+
 #btn-del, #btn-buy, #btn-edit {
 
   border-radius: 50px;

@@ -15,12 +15,14 @@
         <input id="btn-del" type="submit" value="DELETE ME">
       </form>
     </div>
-    <% if(product.qty === 0) { %>
+    <form action="/products/buy/<%=product._id%>?_method=PUT" method="post">
+      <% if(product.qty === 0) { %>
       <p>Out Of Stock</p>
-    <% } else { %> 
-    <p># of Items Left: <%= product.qty %> </p>
-    <button id="btn-buy">BUY NOW</button>   
-    <% } %> 
+      <% } else { %> 
+      <p># of Items Left: <%= product.qty %> </p>
+      <input id="btn-buy" type="submit" value="BUY ME">
+      <% } %> 
+    </form>
   </div>
   <div class="back-btn">
     <a href="/products">

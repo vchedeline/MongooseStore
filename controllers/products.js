@@ -26,6 +26,19 @@ productRouter.get("/new", (req, res) => {
   res.render("new.ejs");
 });
 
+//Buying Product
+productRouter.put("/buy/:id", (req, res) => {
+  Product.findById(req.params.id, (err, buyingProduct) => {
+    if (err) return res.send(err)
+    req.body = buyingProduct;
+    req.body.qty -= 1;
+    Product.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
+      if (err) return res.send(err);
+      res.redirect(`/products/${req.params.id}`);
+    })
+  })
+});
+
 //Delete
 productRouter.delete("/:id", (req, res) => {
   Product.findByIdAndDelete(req.params.id, (err, deletedProduct) => {
@@ -65,13 +78,5 @@ productRouter.get("/:id", (req, res) => {
     res.render("show.ejs", { product });
   });
 });
-
-//Clicked
-productRouter.put("/clicked", (req, res) => {
-  Product.findByIdAndUpdate(req.params.id, req.body.qty, (err, updatedProductAmount) => {
-    if (err) return res.send(err);
-    res.redirect(`/products/${req.params.id}`);
-  });
-})
 
 module.exports = productRouter;
